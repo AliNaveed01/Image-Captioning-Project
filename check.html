@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>check</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="project-aritificial-intelligence">Project Aritificial Intelligence</h1>
+<h2 id="caption-generation-in-english">Caption Generation In English</h2>
+<h3 id="project-description">Project Description</h3>
+<p>The English image captioning project aims to automatically generate textual descriptions for a given image in English. The goal of this project is to leverage computer vision and natural language processing techniques to enable machines to understand and describe the content of images, which has numerous practical applications, such as assisting visually-impaired individuals, improving image search engines, and enhancing the user experience in social media platforms.</p>
+<p>This project will use a deep learning model that can learn to recognize the content of an image and generate a descriptive sentence that accurately depicts the visual scene. The model will be trained on a large dataset of paired images and their corresponding captions, and will leverage state-of-the-art computer vision and natural language processing techniques to achieve high-quality caption generation.</p>
+<p>The resulting model will be evaluated using standard metrics for image captioning, such as BLEU scores, as well as through human evaluation.</p>
+<h3 id="dataset">Dataset:</h3>
+<p>The English image captioning project uses the Flickr8k dataset, which contains a collection of 8,000 images with corresponding captions in English. The images cover a wide range of topics, including people, animals, nature, and urban scenes. The captions are written in a natural language style, and provide accurate and detailed descriptions of the visual content in each image.</p>
+<h3 id="model-architecture">Model Architecture</h3>
+<p>The English image captioning model uses a combination of Convolutional Neural Networks (CNN) and Long Short-Term Memory (LSTM) networks. Specifically, the VGG16 model is used as the CNN to extract features from the input image. The extracted features are then passed through a dense layer to reduce the dimensionality, and then fed into an LSTM network along with the embedded captions. The LSTM network generates a sequence of output states, which are then passed through a dense layer to generate the final predicted caption.</p>
+<p><img src="https://drive.google.com/drive/u/0/folders/1NS_yE0QyxQskP96TAm_RgkFjIcPDBPX6" alt="Architecture"></p>
+<p>The model architecture can be seen in the code snippet provided, which shows the various layers and their output shapes, as well as the number of parameters involved in each layer. The model takes in two input layers, one for the image features and the other for the embedded captions. These inputs are processed through several layers of dropout, dense, and LSTM layers, before finally outputting the predicted caption.</p>
+<h3 id="training">Training</h3>
+<p>The batch size was set to 10, and the number of epochs was 10. During each epoch, the model was trained using a data generator that generated batches of image-caption pairs on-the-fly.</p>
+<p>To prevent overfitting, the following techniques were used:</p>
+<ul>
+<li>Dropout layers were added to the model to randomly drop out nodes during training and reduce the risk of over-reliance on specific features.</li>
+<li>Early stopping was not used in this particular implementation, but it can be a useful technique to prevent overfitting by stopping training when the model’s performance on a validation set starts to degrade.</li>
+<li>The model was saved after each epoch to ensure that the best-performing model was retained, rather than the final epoch’s model, which may have overfit the training data.</li>
+</ul>
+<p>The training process involved iterating over the training set for the specified number of epochs, generating batches of image-caption pairs using the data generator, and fitting the model using the <code>fit_generator</code> method. The number of steps per epoch was calculated based on the size of the training set and the batch size. The verbose parameter was set to 1 to print the training progress for each epoch.</p>
+<h4 id="evaluation">Evaluation:</h4>
+<p>The BLEU score is calculated using the corpus_bleu() function from the NLTK library. Two BLEU scores are calculated, one for unigrams only (BLEU-1) and another for unigrams and bigrams (BLEU-2). The weights parameter is used to specify which n-gram scores to include in the calculation. For example, weights=(1.0, 0, 0, 0) means only the unigram score is considered, while weights=(0.5, 0.5, 0, 0) means both the unigram and bigram scores are considered, with equal weights.</p>
+</div>
+</body>
+
+</html>
