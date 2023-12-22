@@ -1,6 +1,6 @@
 
 # Image Captioning In English Language
-This project focuses on generating captions for images using the VGG16 model and LSTM neural networks. It combines computer vision and natural language processing techniques to generate descriptive captions for images.
+This project focuses on generating captions for images using the VGG16 model and Encoder Decoder model containing CNN/LSTM. It combines computer vision and natural language processing techniques to generate descriptive captions for images.
 ## Overview
 The goal of this project is to develop a model that can analyze images and generate relevant captions describing the content of the images. The project uses the VGG16 model for image feature extraction and LSTM networks for sequence generation. The model is trained on a dataset consisting of images and their corresponding captions.
 
