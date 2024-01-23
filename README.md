@@ -27,7 +27,7 @@ Note: Tensorflow and Keras is required.
 
 for Installation of both, you can write 
 
-# Install TensorFlow
+## Install TensorFlow
 ```bash
 pip install tensorFlow
 pip install keras
